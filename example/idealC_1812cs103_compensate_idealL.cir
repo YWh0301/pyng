@@ -1,0 +1,17 @@
+.title compensate_L
+XU1 0 Net-_U1--_ +5V -5V out Net-_U1-FB_ +5V ADA4817
+R3 out 0 10k
+V5 +48V Net-_I1-Pad2_ DC 0 
+I1 Net-_C1-Pad1_ Net-_I1-Pad2_ DC 0 SIN( 0 10n 19.69Meg 0 0 0 ) AC 10n  
+L2 Net-_L2-Pad1_ 0 1.5u
+V2 +5V 0 DC 5 
+V1 +48V 0 DC 48 
+C1 Net-_C1-Pad1_ +48V 45p
+R1 Net-_C1-Pad1_ +48V 2.4G
+V3 0 -5V DC 5 
+V4 Net-_C1-Pad1_ Net-_L2-Pad1_ DC 0 
+R2 Net-_U1--_ Net-_U1-FB_ 25k
+C2 Net-_U1--_ Net-_U1-FB_ 6.3p
+XL1 Net-_U1--_ Net-_U1-FB_ 1812cs103
+V6 Net-_L2-Pad1_ Net-_U1--_ DC 0 
+.end

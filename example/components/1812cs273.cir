@@ -1,0 +1,15 @@
+* 1812cs-273 spice model
+.subckt 1812cs273 in out k=1.12e-2
+
+R2 in posR 12.5
+L1 negR out 26.89u
+C1 posR Net-_C1-Pad2_ 0.540p
+R1 out Net-_C1-Pad2_ 338
+
+* 使用F型cccs器件模拟频率响应电阻元件；如果使用G型vccs将电压源连接在vccs输入可能导致singular matrix报错
+Bx 1 0 v=hertz==0 ? 1e5*v(posR,negR) : -1/{k}/sqrt(hertz)*v(posR,negR)
+Rx 2 0 1
+Vx 2 1 DC 0
+Fx posR negR Vx 1
+
+.ends
